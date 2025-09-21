@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const News = () => {
   const dispatch = useDispatch();
-  const { newsData } = useSelector((state) => state.news);
+  const { newsData, loading, error } = useSelector((state) => state.news);
 
   useEffect(() => {
     //! Mounting
@@ -21,6 +21,14 @@ const News = () => {
   return (
     <>
       <h1>NEWS</h1>
+
+      {loading && <img src={loadingGif} alt="gif" />}
+
+      {error && (
+        <Typography variant="h4" color="error" component="div">
+          Oops Somehing went wrong
+        </Typography>
+      )}
 
       <Box
         xs={{ d: "flex" }}

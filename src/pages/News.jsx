@@ -16,6 +16,12 @@ const News = () => {
   useEffect(() => {
     //! Mounting
     dispatch(getNews());
+
+     //? News componenti DOM'dan kaldırldıktan hemen sonra Redux global state^deki newsData verisi siler.
+    //! componentWillUnmouning
+    return () => {
+      dispatch(clearNewsData())
+    }
   }, []);
 
   return (

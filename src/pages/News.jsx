@@ -8,6 +8,8 @@ import { CardMedia } from "@mui/material";
 import { useEffect } from "react";
 import { getNews } from "../features/newsSlice";
 import { useDispatch, useSelector } from "react-redux";
+import loadingGif from "../assets/loading.gif";
+import { clearNewsData } from "../features/newsSlice";
 
 const News = () => {
   const dispatch = useDispatch();
@@ -17,12 +19,12 @@ const News = () => {
     //! Mounting
     dispatch(getNews());
 
-     //? News componenti DOM'dan kaldırldıktan hemen sonra Redux global state^deki newsData verisi siler.
+    //? News componenti DOM'dan kaldırldıktan hemen sonra Redux global state^deki newsData verisi siler.
     //! componentWillUnmouning
     return () => {
-      dispatch(clearNewsData())
-    }
-  }, []);
+      dispatch(clearNewsData());
+    };
+  }, [dispatch]);
 
   return (
     <>
@@ -48,7 +50,7 @@ const News = () => {
             <CardMedia
               component="img"
               height="250"
-              image={item?.urlToImage}
+              image={item?.image}
               alt="img"
             />
             <CardContent>

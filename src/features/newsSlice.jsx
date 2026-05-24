@@ -8,17 +8,19 @@ const initialState = {
 };
 
 export const getNews = createAsyncThunk(
-  "getNews", //? action type
+  "getNews",
   async () => {
-    //? api istek fonksiyonu
-    const API_KEY = "1a1a999e0d7240a6bd2dead87bcca78e";
-    const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
+    const API_KEY = "d54f71fb016a0fbcdc4cd278062c4498";
+
+    const url = `https://gnews.io/api/v4/top-headlines?category=general&lang=en&country=us&max=10&apikey=${API_KEY}`;
+
     const { data } = await axios(url);
+
     console.log(data.articles);
+
     return data.articles;
   }
 );
-
 const newsSlice = createSlice({
   name: "news",
   initialState,
@@ -43,6 +45,6 @@ const newsSlice = createSlice({
   },
 });
 
-export const { clearNewsData} = newsSlice.actions;
+export const { clearNewsData } = newsSlice.actions;
 
 export default newsSlice.reducer;

@@ -21,13 +21,9 @@ npm install veya yarn
 - `@emotion/styled`
 
 ## `Kullanilan API`:
-
-- https://newsapi.org/
-  (Get Key butonuna tiklanarak key alinabilir)
-
-- URL:
-  const url = `https://newsapi.org/v2/top-headlines?country=tr&apiKey=${API_KEY}`;
+- API Provider: GNews
+- Documentation: https://gnews.io/docs
 
 ## `Kullanilan Araclar`
 
-- `Redux Dev Tools` : Chrome uzerinde calisan ve global state uzerinde yapilan tum degisikliklerin takip edilmesini saglayan tarayici uzantisidir. Indirmek icin [tiklayiniz.](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?utm_source=chrome-ntp-icon)`
+- `Redux Dev Tools` : Chrome uzerinde calisan ve global state uzerinde yapilan tum degisikliklerin takip edilmesini saglayan tarayici uzantisidir.
